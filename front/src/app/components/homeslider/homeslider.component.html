@@ -1,0 +1,61 @@
+<div class="relative w-full overflow-hidden">
+  <div
+    class="flex transition-transform ease-in-out"
+    [style.transform]="'translateX(-' + currentIndex * 100 + '%)'"
+  >
+    @for (slide of slides; track slide) {
+      <div class="w-full flex-shrink-0">
+        <img [src]="slide" class="w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[665px]" />
+
+        <div
+          class="absolute justify-center items-center text-txt inset-0 text-center flex flex-col px-4"
+        >
+
+          <div class="flex items-center justify-center relative group mb-6">
+           
+            <span
+              class="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-10 w-[40px] sm:w-[64px] h-[4px] rounded-full bg-head transition-all duration-500 group-hover:-translate-x-2"
+            ></span>
+
+          
+            <h2
+              class="font-bold text-[24px] sm:text-[32px] md:text-[40px] text-txt text-center px-2 sm:px-8 md:px-16 cursor-pointer leading-tight font-hm"
+            >
+              <span class="block">With you in</span>
+              <span class="block">Every Success</span>
+            </h2>
+
+          
+            <span
+              class="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-10 w-[40px] sm:w-[64px] h-[4px] rounded-full bg-head transition-all duration-500 group-hover:translate-x-2"
+            ></span>
+          </div>
+
+        
+          <button
+            class="bg-head h-[48px] sm:h-[54px] lg:h-[60px] px-4 rounded-full w-[200px] sm:w-[220px] lg:w-[256px] text-txt font-normal text-sm sm:text-base md:text-lg lg:text-xl flex items-center justify-center gap-2 hover:bg-[rgba(0,0,0,1)]"
+          >
+            Apply Now
+            <i class="fa-solid fa-chevron-right text-txt w-5 h-4"></i>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Previous button -->
+  <button
+    class="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-slide rounded-full h-10 w-10 sm:h-12 sm:w-12"
+    (click)="prevSlide()"
+  >
+    <i class="fa-solid fa-chevron-left text-head w-6 h-4 sm:w-8"></i>
+  </button>
+
+  <!-- Next button -->
+  <button
+    class="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-slide rounded-full h-10 w-10 sm:h-12 sm:w-12"
+    (click)="nextSlide()"
+  >
+    <i class="fa-solid fa-chevron-right text-head w-6 h-4 sm:w-8"></i>
+  </button>
+</div>
