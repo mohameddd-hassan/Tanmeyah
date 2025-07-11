@@ -11,7 +11,7 @@ import { MenuService } from '../menu.service';
 })
 export class NavComponent {
   activeLink: string = '';
-  // menuOpen: boolean = false; // هنشيل المتغير ده
+
 
   links: string[] = [
     'Home',
