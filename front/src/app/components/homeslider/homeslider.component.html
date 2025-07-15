@@ -33,10 +33,11 @@
 
         
           <button
-            class="bg-head h-[48px] sm:h-[54px] lg:h-[60px] px-4 rounded-full w-[200px] sm:w-[220px] lg:w-[256px] text-txt font-normal text-sm sm:text-base md:text-lg lg:text-xl flex items-center justify-center gap-2 hover:bg-[rgba(0,0,0,1)]"
+            class="bg-head h-[48px] sm:h-[54px] lg:h-[60px] px-4 rounded-full w-[200px] sm:w-[220px] lg:w-[256px] text-txt font-normal text-sm sm:text-base md:text-lg lg:text-xl flex items-center justify-center gap-2 transition-all duration-300 hover:gap-8 hover:bg-[rgba(0,0,0,1)]"
           >
             Apply Now
-            <i class="fa-solid fa-chevron-right text-txt w-5 h-4"></i>
+            <img src="../../../assets/images/homeslider/whitearrow.svg" />
+
           </button>
         </div>
       </div>
@@ -44,16 +45,17 @@
   </div>
 
   <button
-    class="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-slide rounded-full h-10 w-10 sm:h-12 sm:w-12"
+    class="absolute top-1/2 left-2 sm:left-4 -translate-y-1/2 bg-slide rounded-full h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center"
     (click)="prevSlide()"
   >
-    <i class="fa-solid fa-chevron-left text-head w-6 h-4 sm:w-8"></i>
+  <img src="../../../assets/images/homeslider/leftarrow.svg" />
+   
   </button>
 
   <button
-    class="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-slide rounded-full h-10 w-10 sm:h-12 sm:w-12"
+    class="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2 bg-slide rounded-full h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center"
     (click)="nextSlide()"
   >
-    <i class="fa-solid fa-chevron-right text-head w-6 h-4 sm:w-8"></i>
+  <img src="../../../assets/images/homeslider/rightarrow.svg" />
   </button>
 </div>

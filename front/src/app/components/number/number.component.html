@@ -1,0 +1,28 @@
+<div class="flex flex-col justify-center items-center bg-head">
+    <div class="group relative ">
+        <span class="hidden sm:block absolute left-0 top-1/2 
+            -translate-x-12 md:-translate-x-24 lg:-translate-x-24 2xl:-translate-x-48
+            -translate-y-1/2
+            w-[32px] md:w-[64px] lg:w-[60px] 2xl:w-[90px]
+            group-hover:w-[64px] md:group-hover:w-[128px] lg:group-hover:w-[100px] 2xl:group-hover:w-[190px]
+            h-[5px] 2xl:h-[8px]
+            rounded-full bg-slide2 transition-all duration-500"></span>
+        <h2 class="font-hm font-bold text-txt text-2xl md:text-3xl lg:text-4xl lg:pt-12 2xl:text-6xl leading-10 mb-12 pt-8 mx-6 md:mx-12 lg:mx-20 2xl:mx-32">In Numbers</h2>
+        <span class="hidden sm:block absolute right-0 top-1/2 
+            translate-x-12 md:translate-x-24 lg:translate-x-24 2xl:translate-x-48
+            -translate-y-1/2
+            w-[32px] md:w-[64px] lg:w-[60px] 2xl:w-[90px]
+            group-hover:w-[64px] md:group-hover:w-[128px] lg:group-hover:w-[100px] 2xl:group-hover:w-[190px]
+            h-[5px] 2xl:h-[8px]
+            rounded-full bg-slide2 transition-all duration-500"></span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 md:gap-y-10 lg:gap-y-8 gap-x-6 md:gap-x-16 lg:gap-x-32 2xl:gap-x-60 text-balance">
+    @for(n of nums ; track n){
+        <div class="flex justify-center flex-col items-center gap-2 text-balance mb-8 sm:mb-4">
+            <img [src]="n.img" class="mb-4 w-12 md:w-16 lg:w-20 2xl:w-32 h-12 md:h-16 lg:h-20 2xl:h-32"/>
+            <p class="font-hm font-bold text-4xl md:text-5xl lg:text-6xl 2xl:text-8xl text-txt leading-10 2xl:leading-[90px]">{{n.number}}</p>
+            <p class="font-hm font-normal text-txt text-lg md:text-xl lg:text-2xl 2xl:text-4xl leading-10 break-words">{{n.title}}</p>
+        </div>
+    }
+    </div>
+</div>

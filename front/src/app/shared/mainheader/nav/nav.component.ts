@@ -11,7 +11,7 @@ import { MenuService } from '../menu.service';
 })
 export class NavComponent {
   activeLink: string = '';
-
+  isAToggled: boolean = false;
 
   links: string[] = [
     'Home',
@@ -32,6 +32,10 @@ export class NavComponent {
   }
 
   setActive(link: string) {
+    if (link === 'A') {
+      this.isAToggled = !this.isAToggled;
+      return; // Don't set as active link
+    }
     this.activeLink = link;
   }
 

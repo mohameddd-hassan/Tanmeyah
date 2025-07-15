@@ -1,0 +1,76 @@
+<div class="space-y-16 relative">
+  <div class="bg-hero-pattern absolute inset-0 z-0 opacity-25"></div>
+
+  <div class="relative z-10 w-full flex items-center justify-center gap-16 group transition-all duration-500 hover:gap-2" style="height: 60px;">
+       <span
+      class="hidden -translate-x-12 sm:block w-[32px] md:w-[64px] h-[6px] rounded-full bg-slide2
+             transition-all duration-500
+             group-hover:w-[128px]"
+    ></span>
+
+  
+    <h2 class="font-hm font-bold text-head text-3xl leading-10 text-center px-4">
+      Our Product
+    </h2>
+
+  
+    <span
+      class="hidden translate-x-12 sm:block w-[32px] md:w-[64px] h-[6px] rounded-full bg-slide2
+             transition-all duration-500
+             group-hover:w-[128px]"
+    ></span>
+  </div>
+
+  <div
+    class="w-full overflow-x-auto scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden relative"
+    #slider
+    (mouseenter)="pauseScroll()"
+    (mouseleave)="resumeScroll()"
+    (touchstart.passive)="pauseScroll()"
+    (touchend.passive)="resumeScroll()"
+  >
+    <div class="flex w-max gap-6 px-4 scroll-content" [style.scrollBehavior]="'smooth'">
+      <ng-container *ngFor="let c of card.concat(card)">
+        <div
+          class="flex-shrink-0 snap-start w-[301px] h-[503px] bg-ourproduct rounded-xl border border-head shadow-md p-4 flex flex-col items-center"
+        >
+          <img
+            [src]="c.img"
+            alt="product"
+            class="w-[244px] h-[192px] object-cover rounded-lg mb-4"
+          />
+          <p class="font-bold text-head mb-2 text-center font-hm text-base leading-6">
+            {{ c.title }}
+          </p>
+          <p class="text-center mb-4 font-normal font-hm text-sm leading-5 text-black">
+            {{ c.content }}
+          </p>
+          <ul class="mb-4 w-full gap-2">
+            <li
+              *ngFor="let f of c.features"
+              class="flex items-center gap-2 text-adv text-xs mb-1 font-normal font-hm"
+            >
+              <img src="../../../assets/images/ourproducts/Icon.svg" class="w-4 h-4" />
+              {{ f }}
+            </li>
+          </ul>
+          <button
+            class="bg-head text-txt rounded-xl px-20 py-2 font-hm text-center font-normal mt-auto hover:bg-red-700 transition"
+          >
+            Apply Now
+          </button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+
+  <div class="flex justify-center items-center -translate-y-4">
+    <button
+      class="bg-head text-txt font-normal font-hm rounded-full w-[256px] h-[60px] hover:bg-red-700 transition flex justify-center items-center hover:gap-6  hover:bg-[rgba(0,0,0,1)]"
+    >
+      Apply Now
+      <img src="../../../assets/images/homeslider/whitearrow.svg" class="ml-4">
+    </button>
+  </div>
+</div>

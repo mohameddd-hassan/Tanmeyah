@@ -1,8 +1,68 @@
-<div>
-    <h2>About Us</h2>
-    <div>
-        <img src="" alt=""/>
-        <p></p>
-        <button></button>
+<div class="relative w-full flex flex-col items-center justify-center overflow-visible py-8 sm:py-0">
+  <div class="bg-hero-pattern absolute inset-0 z-0 opacity-25"></div>
+
+
+  <div class="relative flex items-center justify-center group z-50 mb-10 sm:mb-16">
+    <span class="hidden  sm:block absolute left-0 top-1/2 -translate-x-12 md:-translate-x-24 -translate-y-1/2 w-[32px] md:w-[64px] group-hover:w-[64px] md:group-hover:w-[128px] h-[6px] rounded-full bg-slide2 transition-all duration-500"></span>
+
+    <h2 class="font-hm font-bold text-head text-center text-2xl sm:text-3xl leading-10 px-4 mx-12 sm:mx-20">
+      About Us
+    </h2>
+
+    <span class="hidden sm:block absolute right-0 top-1/2 translate-x-12 md:translate-x-24 -translate-y-1/2 w-[32px] md:w-[64px] group-hover:w-[64px] md:group-hover:w-[128px] h-[6px] rounded-full bg-slide2 transition-all duration-500"></span>
+  </div>
+
+  <!-- Cards -->
+  <div class="w-full flex justify-center items-center z-20 px-0 sm:px-4 relative">
+    <div class="relative w-full max-w-[1440px] flex justify-center items-center px-4">
+      
+ 
+      <button
+        class="absolute left-[-8px] sm:left-2 top-1/2 -translate-y-1/2 bg-head rounded-full h-10 w-10 sm:h-12 sm:w-12 z-50 flex items-center justify-center shadow"
+        (click)="prevSlide()"
+        aria-label="Previous"
+      >
+       <img src="../../../assets/images/about/lwhite.svg" alt="">
+      </button>
+
+      <!-- Cards Container -->
+      <div class="flex gap-2 justify-center items-center mx-auto w-full">
+        @for (card of getVisibleCards(); track $index; let i = $index) {
+          <div
+            class="relative flex flex-col items-center transition-all duration-500 ease-in-out"
+            [ngClass]="{
+              'w-[90vw] sm:w-[409px] scale-100 sm:scale-125 z-30 shadow-xl': i === 1,
+              'hidden sm:flex w-[448px] scale-95 z-10': i !== 1
+            }"
+          >
+            <!-- Card -->
+            <div class="bg-txt rounded-md shadow p-4 flex flex-col items-center gap-2 w-full h-auto sm:h-[347px]">
+              <img [src]="card.img" alt="card" class="w-full h-[200px] object-cover rounded" />
+              <p class="font-hm font-semibold text-xl sm:text-3xl text-black text-center">
+                {{ card.title }}
+              </p>
+              <button
+                [ngClass]="i === 1
+                  ? 'bg-head text-txt rounded-full font-hm w-full sm:w-auto px-6 sm:px-20 py-2 sm:py-4 text-base sm:text-2xl font-bold mt-1 sm:mt-2 flex justify-center items-center transition-all duration-300 gap-2 hover:gap-6  hover:bg-[rgba(0,0,0,1)]'
+                  : 'bg-head text-txt rounded-full font-hm w-full sm:w-auto px-6 sm:px-10 py-2 sm:py-3 text-base sm:text-lg mt-2 sm:mt-4 flex justify-center items-center transition-all duration-300 gap-2 hover:gap-6  hover:bg-[rgba(0,0,0,1)]'"
+              >
+                Learn More 
+                <img src="../../../assets/images/homeslider/whitearrow.svg" class="ml-2">
+
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+
+      <!-- Next Arrow -->
+      <button
+        class="absolute right-[-1px] sm:right-2 top-1/2 -translate-y-1/2 bg-head rounded-full h-10 w-10 sm:h-12 sm:w-12 z-50 flex items-center justify-center shadow"
+        (click)="nextSlide()"
+        aria-label="Next"
+      >
+      <img src="../../../assets/images/homeslider/whitearrow.svg" alt="">
+      </button>
     </div>
+  </div>
 </div>
