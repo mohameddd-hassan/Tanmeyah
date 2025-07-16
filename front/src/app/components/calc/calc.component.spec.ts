@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NumberComponent } from './number.component';
+import { CalcComponent } from './calc.component';
 
-describe('NumberComponent', () => {
-  let component: NumberComponent;
-  let fixture: ComponentFixture<NumberComponent>;
+describe('CalcComponent', () => {
+  let component: CalcComponent;
+  let fixture: ComponentFixture<CalcComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NumberComponent]
+      imports: [CalcComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NumberComponent);
+    fixture = TestBed.createComponent(CalcComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
