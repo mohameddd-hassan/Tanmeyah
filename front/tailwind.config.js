@@ -21,7 +21,7 @@ module.exports = {
 
 
     },
-    
+   
     extend: {
      backgroundImage: {
         'hero-pattern': "url('assets/images/whoweare/Vector.svg')",

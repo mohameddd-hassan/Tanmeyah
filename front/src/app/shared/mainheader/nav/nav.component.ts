@@ -1,13 +1,14 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { MenuService } from '../menu.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nav',
+  standalone: true,
   imports: [CommonModule, NgIf, NgFor],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css',
-  standalone: true,
 })
 export class NavComponent {
   activeLink: string = '';
@@ -25,7 +26,10 @@ export class NavComponent {
     'A'
   ];
 
-  constructor(public menuService: MenuService) {}
+  constructor(
+    public menuService: MenuService,
+    private translate: TranslateService
+  ) {}
 
   toggleMenu() {
     this.menuService.toggleMenu();
@@ -34,7 +38,9 @@ export class NavComponent {
   setActive(link: string) {
     if (link === 'A') {
       this.isAToggled = !this.isAToggled;
-      return; // Don't set as active link
+      const lang = this.isAToggled ? 'ar' : 'en';
+      this.translate.use(lang); 
+      return;
     }
     this.activeLink = link;
   }

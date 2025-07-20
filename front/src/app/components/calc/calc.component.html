@@ -1,55 +1,74 @@
 <div class="flex justify-center items-center gap-8 pt-2 relative lg:flex-row  flex-col ">
   <div class="bg-hero-pattern inset-0 z-0 absolute opacity-25 "></div>
 
-    <div class="z-50 pt-2 ">
-       <img src="../../../assets/images/calculate/calc.svg" class="2xl:w-[750px] 2xl:h-full lg:w-[400px] "/>
+    <div class="z-50  ">
+       <img src="../../../assets/images/calculate/calc.svg" class="2xl:w-[750px] 2xl:h-full md:w-[400px] w-[300px] xl:w-[493px]"/>
     </div>
-    <div class="flex flex-col justify-center items-start gap-6 z-50 pb-1 2xl:gap-16 lg:gap-4">
+    <div class="flex flex-col justify-center items-start gap-6 pt-8 z-50 pb-1 2xl:gap-16 lg:gap-4 md:mx-0 mx-6">
       <p class="font-hm font-medium text-base text-[#3A3490] flex items-center 2xl:text-5xl">
-        Loan Calculator 
+        {{'TITLE'|translate}}
         <span class="inline-block w-12 h-[3px] bg-head ml-4 mt-1 2xl:w-16"></span>
       </p>
-      <h2 class="font-hm font-semibold text-black text-3xl leading-10 2xl:text-5xl">Calculate Your Loan</h2>
+      <h2 class="font-hm font-semibold text-black text-3xl leading-10 2xl:text-5xl">{{'CALCULATE'|translate}}</h2>
     <div class="w-full">
    
 
-<div class=" md:w-[500px] 2xl:w-[800px] sm:w-[250px] flex flex-col items-center">
+<div class=" md:w-[500px] 2xl:w-[800px] flex flex-col items-center">
 
   <div class="flex justify-between w-full">
     <p class="font-hm font-medium text-base leading-7 text-black 2xl:text-2xl">Instalments</p>
-    <span class="text-sm font-normal text-black font-hm border rounded-full px-4 py-1 bg-txt border-[#BBB8C8] 2xl:text-2xl">
-      {{ value1 }}
-    </span>
+    <input
+      type="number"
+      min="50000"
+      max="250000"
+      [value]="value1"
+      (input)="onSlider1Change($event)"
+      class="text-sm font-normal text-black font-hm border rounded-full px-4 py-1 bg-txt border-[#BBB8C8] 2xl:text-2xl w-24 text-right"
+    />
   </div>
-  <div class="w-full h-4 bg-gray-300 rounded-full overflow-hidden">
+  <div class="w-full h-4 rounded-full overflow-hidden">
     <div class="transition-all duration-300 h-4" [style.width.%]="value1"></div>
   </div>
+  
   <input
     type="range"
     min="0"
     max="250000"
     [value]="value1"
     (input)="onSlider1Change($event)"
-    class="w-full"
+    class="w-full accent-[#251F80] "
   />
-
+  <div class="flex w-full justify-between text-xs text-gray-500 mt-1 mb-2">
+    <span>50k</span>
+    <span>250k</span>
+  </div>
   <div class="flex justify-between w-full mt-6">
     <p class="font-hm font-medium text-base leading-7 text-black 2xl:text-2xl">Number Of Instalments</p>
-    <span class="text-sm font-normal text-black font-hm border rounded-full px-4 py-1 bg-txt border-[#BBB8C8] 2xl:text-2xl">
-      {{ value2 }}
-    </span>
+    <input
+      type="number"
+      min="0"
+      max="60"
+      [value]="value2"
+      (input)="onSlider2Change($event)"
+      class="text-sm font-normal text-black font-hm border rounded-full px-4 py-1 bg-txt border-[#BBB8C8] 2xl:text-2xl w-16 text-right"
+    />
   </div>
   <div class="w-full h-4 rounded-full overflow-hidden">
-    <div class="h-full transition-all duration-300" [style.width.%]="value2"></div>
+    <div class="h-full accent-[#251F80] transition-all duration-300" [style.width.%]="value2"></div>
   </div>
+ 
   <input
     type="range"
     min="0"
     max="60"
     [value]="value2"
     (input)="onSlider2Change($event)"
-    class="w-full"
+    class="w-full accent-[#251F80] "
   />
+  <div class="flex w-full justify-between text-xs text-gray-500 mt-1 mb-2">
+    <span>0</span>
+    <span>60</span>
+  </div>
 </div>
 </div>
 <div class="w-full flex flex-col items-start">
@@ -61,10 +80,10 @@
   </button>
   <div class="w-full min-h-[80px] mt-4 flex flex-col items-start justify-start">
     <ng-container *ngIf="value2 != 0">
-      <p class="text-lg font-semibold text-green-700 font-hm font-base 2xl:text-3xl">
+      <p class="text-lg font-semibold font-hm font-base 2xl:text-3xl">
         Monthly Installment: {{ result | number:'1.2-2' }}
       </p>
-      <p class="text-base text-gray-600 text-balance max-w-xl break-words font-hm font-base 2xl:text-2xl">
+      <p class="text-base  2xl:text-pretty text-balance max-w-xl break-words font-hm font-base 2xl:text-2xl" style="color: rgb(131, 129, 129);">
         {{ message }}
       </p>
     </ng-container>

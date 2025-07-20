@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-calc',
-  imports: [CommonModule],
+  imports: [CommonModule,TranslateModule],
   templateUrl: './calc.component.html',
   styleUrl: './calc.component.css'
 })
@@ -12,6 +13,7 @@ export class CalcComponent {
   value2 = 0;
   result = 0;
   message = '';
+  
   
 
   onSlider1Change(event: Event) {

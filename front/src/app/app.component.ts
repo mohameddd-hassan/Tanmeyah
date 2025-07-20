@@ -7,6 +7,7 @@ import { OurproductsComponent } from './components/ourproducts/ourproducts.compo
 import { NumberComponent } from './components/number/number.component';
 import { OurchannelComponent } from './components/ourchannel/ourchannel.component';
 import { CalcComponent } from './components/calc/calc.component';
+import { TranslateService } from '@ngx-translate/core';
 
 
 
@@ -16,4 +17,14 @@ import { CalcComponent } from './components/calc/calc.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private translate: TranslateService) {
+    translate.addLangs(['en' ,'ar'])
+    this.translate.setDefaultLang('en');
+    this.translate.use('en'); 
+  }
+
+  switchLanguage(lang: string) {
+    this.translate.use(lang);
+  }
+}
