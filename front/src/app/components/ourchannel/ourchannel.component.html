@@ -21,14 +21,14 @@
     @for(c of channels; let i = $index; track c){
 
     <div
-      class="flex flex-row md:flex-col items-center w-full md:gap-2 gap-4 md:p-0 p-4"
+      class="flex flex-row md:flex-col items-center w-full md:gap-2 gap-2 md:p-0 p-4"
       [ngClass]="i % 2 === 0 ? 'bg-txt' : 'bg-[#e7e7e7]'"
     >
       <img
         [src]="c.img"
         class="w-6 h-6 2xl:w-12 2xl:h-12 md:w-6 md:h-6 lg:w-6 lg:h-6 xl:w-8 xl:h-8 md:pt-2 md:my-2"
       />
-      <div class="flex flex-col md:items-center flex-1">
+      <div class="flex flex-col md:items-center flex-1 md:pb-3">
         <p
           class="font-hm font-bold text-[13px]   md:text-[9px] lg:text-[10px] xl:text-sm 2xl:text-xl"
         >
