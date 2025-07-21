@@ -9,7 +9,7 @@
     <h2
       class="font-hm font-bold text-head text-3xl md:text-3xl lg:text-4xl lg:pt-12 2xl:text-6xl leading-10 mb-12 pt-8 mx-6 md:mx-12 lg:mx-20 2xl:mx-32 z-10"
     >
-      Our Channels
+      {{ "ourChannels.title" | translate }}
     </h2>
     <span
       class="block absolute right-0 top-1/2 translate-x-12 md:translate-x-24 lg:translate-x-24 2xl:translate-x-48 -translate-y-1/2 w-[32px] md:w-[64px] lg:w-[60px] 2xl:w-[90px] group-hover:w-[64px] md:group-hover:w-[128px] lg:group-hover:w-[100px] 2xl:group-hover:w-[190px] h-[5px] 2xl:h-[8px] rounded-full bg-slide2 transition-all duration-500"
@@ -32,12 +32,12 @@
         <p
           class="font-hm font-bold text-[13px]   md:text-[9px] lg:text-[10px] xl:text-sm 2xl:text-xl"
         >
-          {{ c.title }}
+          {{ c.title | translate }}
         </p>
         <p
           class="font-hm font-normal pt-0.5 text-[10px] sm:text-xs sm:pt-0.5 md:text-[9px] lg:text-xs lg:pt-1 2xl:text-xl"
         >
-          {{ c.p }}
+          {{ c.p | translate }}
         </p>
       </div>
     </div>

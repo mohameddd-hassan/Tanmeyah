@@ -1,9 +1,22 @@
 {
-    "TITLE": "Loan Calculator",
-    "CALCULATE": "Calculate Now",
-    "instalments":"Instalments",
-    "ninstalments":"Number of Instalments",
-    "msg":"This calculation is for illustrative purposes only and does not constitute a final offer or cash amounts. The actual amount or installment may vary based on the terms and conditions.",
-    "minstalments":"  Monthly Installment: "
+  "calculator": {
+    "title": "Loan Calculator",
+    "calc": "Calculate",
+   "ins":"Instalment",
+   "nins":"Number Of Instalments",
+    "msg": "This calculation is for illustrative purposes only and does not constitute a final offer or cash amounts. The actual amount or installment may vary based on the terms and conditions.",
+    "minstalments": "Monthly Installment:"
+  },
+
+  "ourChannels": {
+    "title": "Our Channels",
+    "channels": [
+      { "title": "Branch Locator And", "p": "ATMS" },
+      { "title": "Hot Line", "p": "16164" },
+      { "title": "Our Whatsapp", "p": "Abo El Seba3" },
+      { "title": "Place & follow your request", "p": "Easy & Quick Loans" },
+      { "title": "the E payment partners", "p": "Convenient Payments" }
+    ]
   }
+}
   
