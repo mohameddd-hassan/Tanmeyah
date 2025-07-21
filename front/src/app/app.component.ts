@@ -22,9 +22,12 @@ export class AppComponent {
     translate.addLangs(['en' ,'ar'])
     this.translate.setDefaultLang('en');
     this.translate.use('en'); 
+   
   }
 
   switchLanguage(lang: string) {
     this.translate.use(lang);
+    const dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = dir;
   }
 }

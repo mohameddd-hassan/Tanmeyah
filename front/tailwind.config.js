@@ -30,6 +30,9 @@ module.exports = {
        fontFamily: {
         hm: ['hm'],
       },
+      screens:{
+        '2xl':'2200px'
+      }
     },
   },
   plugins: [],

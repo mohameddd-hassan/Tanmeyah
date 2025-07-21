@@ -3,47 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-Black.ttf') format('truetype');
-
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-Bold.ttf') format('truetype');
-
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-ExtraBold.ttf') format('truetype');
-
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-ExtraBold.ttf') format('truetype');
-
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-Light.ttf') format('truetype');
-
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-Medium.ttf') format('truetype');
-
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-Regular.ttf') format('truetype');
-
-}
-@font-face {
-  font-family: 'Roboto';
-  src: url('assets/font/font1/MPLUSRounded1c-Regular.ttf') format('truetype');
-
-}
-
 
 @font-face {
   font-family: 'hm';
@@ -66,7 +25,6 @@ input[type='range']::-moz-range-thumb {
   height: 1rem;
   border-radius: 9999px;
 }
-
 
 body{
     font-family: 'Roboto', sans-serif;

@@ -1,5 +1,5 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { MenuService } from '../menu.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -13,6 +13,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavComponent {
   activeLink: string = '';
   isAToggled: boolean = false;
+  @Output() languageSwitch = new EventEmitter<string>();
+  currentLang: string = 'en';
 
   links: string[] = [
     'Home',
@@ -38,8 +40,8 @@ export class NavComponent {
   setActive(link: string) {
     if (link === 'A') {
       this.isAToggled = !this.isAToggled;
-      const lang = this.isAToggled ? 'ar' : 'en';
-      this.translate.use(lang); 
+      this.currentLang = this.isAToggled ? 'ar' : 'en';
+      this.languageSwitch.emit(this.currentLang);
       return;
     }
     this.activeLink = link;

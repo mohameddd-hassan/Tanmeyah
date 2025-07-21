@@ -1,5 +1,9 @@
 {
     "TITLE": "Loan Calculator",
-    "CALCULATE": "Calculate Now"
+    "CALCULATE": "Calculate Now",
+    "instalments":"Instalments",
+    "ninstalments":"Number of Instalments",
+    "msg":"This calculation is for illustrative purposes only and does not constitute a final offer or cash amounts. The actual amount or installment may vary based on the terms and conditions.",
+    "minstalments":"  Monthly Installment: "
   }
   
