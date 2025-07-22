@@ -1,0 +1,60 @@
+<section class="relative  py-10 md:px-32 px-10">
+  <div class="w-full md:w-[95%]  flex flex-col items-center justify-center gap-8">
+
+  
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-4 md:gap-12 w-full"
+         *ngFor="let story of slides; let i = index" [ngClass]="{ 'hidden': currentIndex !== i }">
+
+   
+      <div class="w-full md:w-[100%] lg:w-[50%] flex flex-col items-start gap-2">
+  <span class="w-20 bg-abslide h-[2px] 2xl:h-[5px] 2xl:w-32"></span>
+  
+  <h2 class="text-head text-xl xd:text-2xl lg:text-xl 2xl:text-5xl font-bold font-hm mb-4">
+    {{ story.title }}
+  </h2>
+<div class="relative w-full ">
+  <img [src]="story.img"
+       alt="{{ story.title }}"
+       class="w-full object-cover  rounded-[50px] h-[22rem] " />
+       
+
+  <!-- <div class="absolute inset-0 rounded-[50px]  bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,#000_100%)]"></div> -->
+</div>
+
+
+</div>
+
+
+     
+      <div class="w-full lg:w-[50%] flex flex-col   items-end">
+        <p class="font-normal text-xs md:text-xl lg:text-sm xl:text-xl   2xl:text-4xl md:leading-9 leading-6 font-hm text-desc">
+          {{ story.description }}
+        </p>
+        <div class="flex justify-center mt-6 gap-2">
+            <ng-container *ngFor="let story of slides; let i = index">
+                <button (click)="currentIndex = i" class=" h-2 rounded-full" [ngClass]="{
+        'bg-head  w-5 ': currentIndex === i,
+        'bg-dots w-2 opacity-50': currentIndex !== i
+      }"></button>
+            </ng-container>
+        </div>
+      </div>
+    </div>
+
+   
+
+    <button (click)="nextStory()"
+            class="absolute right-4 md:right-36 md:top-1/2 -translate-y-1/2 bg-head rounded-full w-10 h-10 lg:w-10 lg:h-10 2xl:w-16 2xl:h-16 flex items-center justify-center z-10 shadow-md hover:bg-opacity-80">
+     <svg viewBox="0 0 17 34" fill="none" class="fill-txt ButtonsTransform w-3 md:w-4 2xl:w-6 "
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.9576 14.7546C17.2256 16.619 16.1756 17.8532 15.1329 19.0048C10.8739 23.7114 6.06061 27.9442 1.92283 32.8636C0.887472 33.8632 -0.430594 32.5812 0.358778 31.2209C1.22158 29.7303 2.89945 28.1745 3.9495 26.7187C8.51684 20.4042 9.72476 11.5779 4.83433 4.92876C4.27993 4.17259 2.96921 3.05572 2.61307 2.34735C2.18351 1.48688 2.4552 0.474302 3.33269 0.335236C4.0009 0.230936 5.05829 1.46515 5.57597 1.96492C8.74447 5.02002 12.6326 8.8226 15.4817 12.2297C15.9847 12.8338 16.8328 13.9116 16.9539 14.759L16.9576 14.7546Z"
+                        fill="" />
+                </svg>
+    </button>
+
+    
+
+
+  </div>
+</section>

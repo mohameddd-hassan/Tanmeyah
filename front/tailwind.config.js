@@ -16,9 +16,10 @@ module.exports = {
       hov:'rgba(0,0,0,1)',
       ourproduct: '#F6F6F6',
       adv:' #666666',
-      channel:' rgba(0, 0, 0, 0.15);'
-
-
+      channel:' rgba(0, 0, 0, 0.15);',
+      desc:'#363636',
+      dots:'#D9D9D9',
+      abslide:'#F6A9A9'
 
     },
    

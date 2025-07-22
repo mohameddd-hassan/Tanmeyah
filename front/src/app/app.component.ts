@@ -8,12 +8,14 @@ import { NumberComponent } from './components/number/number.component';
 import { OurchannelComponent } from './components/ourchannel/ourchannel.component';
 import { CalcComponent } from './components/calc/calc.component';
 import { TranslateService } from '@ngx-translate/core';
+import { AboutSectionComponent } from './shared/topsection/about-section/about-section.component';
+import { LeadershipComponent } from './components/aboutusPage/leadership/leadership.component';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [WhoweareComponent, MainheaderComponent, HomesliderComponent, AboutComponent,OurproductsComponent,NumberComponent,OurchannelComponent,CalcComponent],
+  imports: [WhoweareComponent, MainheaderComponent, HomesliderComponent, AboutComponent,OurproductsComponent,NumberComponent,OurchannelComponent,CalcComponent,AboutSectionComponent,LeadershipComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
